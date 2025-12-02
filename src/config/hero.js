@@ -9,9 +9,11 @@ export const heroCopy = {
 };
 
 export const heroStats = [
-  { label: "Hello", confidence: "92.50%" },
-  { label: "Good", confidence: "2.00%" },
+  { label: "Hello", confidence: "0.90%" },
+  { label: "Good", confidence: "0.60%" },
+  { label: "No", confidence: "0.50%" },
   { label: "You", confidence: "1.01%" },
   { label: "Are", confidence: "0.99%" },
   { label: "Come", confidence: "3.50%" },
+  { label: "Welcome", confidence: "92.50%" },
 ];

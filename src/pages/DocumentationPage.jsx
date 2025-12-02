@@ -5,6 +5,8 @@ import Footer from "../components/layout/Footer";
 import { socialLinks } from "../config";
 import { FeedbackModal } from "../sections/feedback/FeedbackSection";
 import { scrollToElement } from "../utils/scroll";
+import MediaWrapper from "../components/ui/MediaWrapper";
+import DatasetCollage from "../components/visuals/DatasetCollage";
 
 // Documentation sections data
 const sections = [
@@ -106,14 +108,11 @@ function ProjectOverview() {
 
       {/* Hero Image */}
       <div className="mb-8 rounded-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-        <img
+        {/* <MediaWrapper
           src="/src/assets/images/misc/hand-landmark.png"
           alt="Hand landmark detection"
           className="w-full max-w-2xl mx-auto"
-          onError={(e) => {
-            e.target.style.display = "none";
-          }}
-        />
+        /> */}
         <div className="p-8 flex items-center justify-center min-h-[300px]">
           <div className="text-center">
             <div className="w-48 h-48 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400/20 to-orange-600/20 flex items-center justify-center">
@@ -457,7 +456,7 @@ function HowItWorks() {
         {/* Image 1 - Hand Landmark Detection */}
         <figure className="my-8">
           <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10">
-            <img
+            <MediaWrapper
               src="/src/assets/images/how-it-work/how-it-work-1.png"
               alt="Hand landmark detection using MediaPipe"
               className="w-full"
@@ -480,7 +479,7 @@ function HowItWorks() {
         {/* Image 2 - Gesture Processing */}
         <figure className="my-8">
           <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10">
-            <img
+            <MediaWrapper
               src="/src/assets/images/how-it-work/how-it-work-2.png"
               alt="Gesture features being processed by the trained recognition model"
               className="w-full"
@@ -500,7 +499,7 @@ function HowItWorks() {
         {/* Image 3 - Real-time Output */}
         <figure className="my-8">
           <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10">
-            <img
+            <MediaWrapper
               src="/src/assets/images/how-it-work/how-it-work-3.png"
               alt="Real-time output showing translated text and speech feature"
               className="w-full"
@@ -596,247 +595,7 @@ function DatasetTraining() {
           </div>
 
           {/* Dataset Images Collage */}
-          <div className="relative h-[700px] overflow-hidden rounded-2xl">
-            {/* Image 1 */}
-            <div className="absolute top-4 left-4 w-40 h-40 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[-3deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-1.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 2 */}
-            <div className="absolute top-8 left-52 w-44 h-44 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[2deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-2.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 3 */}
-            <div className="absolute top-4 left-[420px] w-36 h-36 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[-2deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-3.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 4 */}
-            <div className="absolute top-6 right-8 w-40 h-40 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[4deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-4.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 5 */}
-            <div className="absolute top-52 left-8 w-36 h-44 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[1deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-5.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 6 - Center large */}
-            <div className="absolute top-48 left-1/2 -translate-x-1/2 w-56 h-48 rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(47,107,255,0.25)] rotate-[-1deg] hover:scale-105 transition-transform z-10">
-              <img
-                src="/src/assets/images/dataset/dataset-6.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 7 */}
-            <div className="absolute top-56 right-8 w-48 h-40 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[-3deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-7.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 8 */}
-            <div className="absolute bottom-40 left-16 w-40 h-40 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[3deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-8.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 9 */}
-            <div className="absolute bottom-32 left-64 w-44 h-40 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[-2deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-9.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 10 */}
-            <div className="absolute bottom-24 right-56 w-36 h-36 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[2deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-10.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 11 */}
-            <div className="absolute bottom-8 right-12 w-40 h-44 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[-4deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-11.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Image 12 */}
-            <div className="absolute bottom-4 left-1/3 w-36 h-36 rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(47,107,255,0.2)] rotate-[1deg] hover:scale-105 transition-transform">
-              <img
-                src="/src/assets/images/dataset/dataset-12.png"
-                alt="Dataset sample"
-                className="w-full h-full object-cover grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white ml-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
+          <DatasetCollage />
         </div>
 
         <div>
@@ -1765,7 +1524,7 @@ export default function DocumentationPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-brand-background">
+    <div className="min-h-screen bg-brand-background overflow-x-clip">
       <DocHeader />
 
       <main className="pt-28 pb-16">

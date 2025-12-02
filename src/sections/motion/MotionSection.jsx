@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollyVideo from "scrolly-video/dist/ScrollyVideo.esm.jsx";
 import breakingWall from "../../assets/videos/breaking_wall.mp4";
 import manSign from "../../assets/images/signs/man_sign.png";
+import MediaWrapper from "../../components/ui/MediaWrapper";
 
 // Register ScrollTrigger globally for GSAP usage
 gsap.registerPlugin(ScrollTrigger);
@@ -130,7 +131,7 @@ export default function MotionSection() {
 
   return (
     <section className="relative w-full">
-      <div ref={wrapperRef} className="h-[350vh]">
+      <div ref={wrapperRef} className="h-[350vh] mb-30 md:mb-0">
         <ScrollyVideo
           src={breakingWall}
           transitionSpeed={8}
@@ -145,7 +146,7 @@ export default function MotionSection() {
 
         <div
           ref={overlayRef}
-          className="pointer-events-none sticky top-0 flex h-screen w-full flex-col items-center justify-between gap-8 px-6 pb-10 pt-16 text-center text-white"
+          className="pointer-events-none sticky top-0 flex h-screen w-full flex-col items-center justify-center md:justify-between gap-8 px-6 pb-10 pt-16 text-center text-white"
         >
           <div className="flex flex-col items-center gap-4">
             <h2
@@ -188,9 +189,9 @@ export default function MotionSection() {
 
           <div
             ref={imageRef}
-            className="relative flex w-full items-end justify-center"
+            className="relative flex w-full md:items-end justify-center md:flex-row flex-col gap-10 items-start"
           >
-            <img
+            <MediaWrapper
               src={manSign}
               alt="Man demonstrating sign"
               className="w-full max-w-3xl drop-shadow-[0_35px_65px_rgba(0,0,0,0.75)]"
@@ -198,37 +199,37 @@ export default function MotionSection() {
             {/* Floating feature labels */}
             <span
               data-floating-label
-              className="absolute left-[10%] top-[5%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="md:absolute left-[10%] top-[5%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Real-Time Translation ]
             </span>
             <span
               data-floating-label
-              className="absolute right-[20%] top-[15%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="md:absolute right-[20%] top-[15%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ User Friendly ]
             </span>
             <span
               data-floating-label
-              className="absolute left-[5%] top-[40%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="md:absolute left-[5%] top-[40%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Performance Optimized ]
             </span>
             <span
               data-floating-label
-              className="absolute right-[8%] top-[45%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="md:absolute right-[8%] top-[45%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Secure Processing ]
             </span>
             <span
               data-floating-label
-              className="absolute left-[10%] top-[76%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="md:absolute left-[10%] top-[76%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Accessible Design ]
             </span>
             <span
               data-floating-label
-              className="absolute right-[12%] top-[80%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="md:absolute right-[12%] top-[80%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Multi-Gesture Support ]
             </span>

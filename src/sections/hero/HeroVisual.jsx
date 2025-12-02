@@ -1,4 +1,5 @@
 import heroHand from "../../assets/images/misc/hero-hand.png";
+import MediaWrapper from "../../components/ui/MediaWrapper";
 
 const DataPill = ({ label, confidence }) => (
   <div className="text-sm font-mono text-white/80 animate-pulse-glow">
@@ -26,7 +27,9 @@ export default function HeroVisual({ stats = [] }) {
         <img
           src={heroHand}
           alt="Hand gesture visualization"
-          className="absolute right-[-6vw] top-1/2 z-0 h-auto w-[180vw] drop-shadow-[0_25px_45px_rgba(255,0,0,0.7)] lg:right-[-1vw] lg:w-[250%]"
+          fetchPriority="high"
+          eager={true}
+          className="absolute right-[-10vw] top-1/2 z-0 h-auto w-[180vw] drop-shadow-[0_25px_45px_rgba(255,0,0,0.7)] lg:right-[-1vw] lg:w-[250%]"
           style={{
             transform: "translate(2%, -35%) rotate(9deg)",
             filter: "drop-shadow(0 45px 100px rgba(127,129,255,0.3))",

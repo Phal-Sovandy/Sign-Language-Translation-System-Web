@@ -1,5 +1,7 @@
 import namasteImg from "../../assets/images/signs/namaste.png";
 import cursorImg from "../../assets/images/misc/cursor.png";
+import MediaWrapper from "../../components/ui/MediaWrapper";
+import DatasetCollage from "../../components/visuals/DatasetCollage";
 
 const features = [
   {
@@ -104,7 +106,7 @@ function DemoImage({ cursorImg, namasteImg }) {
 
       {/* Main image container */}
       <div className="relative p-1">
-        <img
+        <MediaWrapper
           src={namasteImg}
           alt="Sign language detection"
           className="h-96 w-auto object-contain"
@@ -125,7 +127,7 @@ function DemoImage({ cursorImg, namasteImg }) {
           ខ្ញុំចង់រៀនភាសាជនពិការគថ្លង់
         </p>
         {/* Cursor */}
-        <img
+        <MediaWrapper
           src={cursorImg}
           alt=""
           className="absolute -right-6 bottom-0 h-14 z-10 w-auto drop-shadow-md"
@@ -163,10 +165,181 @@ function DemoImage({ cursorImg, namasteImg }) {
   );
 }
 
+// Security Icons Component for Secure Processing feature
+function SecurityIcons() {
+  return (
+    <div className="relative w-full h-96 flex items-center justify-center">
+      {/* Icon 1 - Database/Stack */}
+      <div className="absolute top-10 left-8 md:-top-40 md:left-35">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="360"
+          height="360"
+          viewBox="0 0 24 24"
+          className="text-white rotate-[-8deg] hover:scale-110 transition-transform drop-shadow-[0_8px_30px_rgba(47,107,255,0.4)]"
+        >
+          <path
+            fill="currentColor"
+            d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4s8-1.79 8-4s-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"
+          />
+        </svg>
+      </div>
+
+      {/* Icon 2 - Lock */}
+      <div className="absolute top-16 right-12 md:top-36 md:right-26">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="300"
+          height="300"
+          viewBox="0 0 24 24"
+          className="text-white rotate-[12deg] hover:scale-110 transition-transform drop-shadow-[0_8px_30px_rgba(47,107,255,0.4)]"
+        >
+          <path
+            fill="currentColor"
+            d="M19 10h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1h1V9a7 7 0 0 1 14 0zm-2 0V9A5 5 0 0 0 7 9v1zm-6 4v4h2v-4z"
+          />
+        </svg>
+      </div>
+
+      {/* Icon 3 - Shield */}
+      <div className="absolute bottom-20 left-16 md:bottom-4 md:left-20">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="180"
+          height="180"
+          viewBox="0 0 24 24"
+          className="text-white rotate-[-5deg] hover:scale-110 transition-transform drop-shadow-[0_8px_30px_rgba(47,107,255,0.4)]"
+        >
+          <path
+            fill="currentColor"
+            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11z"
+          />
+        </svg>
+      </div>
+
+      {/* Icon 4 - User/Profile */}
+      <div className="absolute bottom-12 right-8 md:bottom-56 md:right-22">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="240"
+          height="240"
+          viewBox="0 0 32 32"
+          className="text-white rotate-[15deg] hover:scale-110 transition-transform drop-shadow-[0_8px_30px_rgba(47,107,255,0.4)]"
+        >
+          <path
+            fill="currentColor"
+            d="M16 22a4 4 0 1 0-4-4a4 4 0 0 0 4 4m0-6a2 2 0 1 1-2 2a2 2 0 0 1 2-2M14 6h4v2h-4z"
+          />
+          <path
+            fill="currentColor"
+            d="M24 2H8a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h16a2.003 2.003 0 0 0 2-2V4a2 2 0 0 0-2-2m-4 26h-8v-2a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1Zm2 0v-2a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3v2H8V4h16v24Z"
+          />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+// Floating Detected Text Boxes Component for Performance Optimized feature
+function FloatingTextBoxes() {
+  const textBoxes = [
+    {
+      id: 1,
+      text: "សួស្តី",
+      top: "5%",
+      left: "90%",
+      delay: "0s",
+      rotate: "-3deg",
+    },
+    {
+      id: 2,
+      text: "សូមស្វាគមន៍",
+      top: "10%",
+      right: "0%",
+      delay: "0.2s",
+      rotate: "2deg",
+    },
+    {
+      id: 3,
+      text: "សូមទោស",
+      top: "25%",
+      left: "75%",
+      delay: "0.4s",
+      rotate: "-2deg",
+    },
+    {
+      id: 4,
+      text: "ជម្រាបសួរ",
+      top: "40%",
+      right: "50%",
+      delay: "0.6s",
+      rotate: "3deg",
+    },
+    {
+      id: 5,
+      text: "ខ្ញុំស្រឡាញ់អ្នក",
+      bottom: "35%",
+      left: "40%",
+      delay: "0.8s",
+      rotate: "-1deg",
+    },
+    {
+      id: 6,
+      text: "អរគុណច្រើន",
+      bottom: "10%",
+      right: "80%",
+      delay: "1s",
+      rotate: "2deg",
+    },
+    {
+      id: 7,
+      text: "សុខសប្បាយ",
+      top: "0",
+      right: "80%",
+      delay: "1.2s",
+      rotate: "-2deg",
+    },
+    {
+      id: 8,
+      text: "ជំរាបលា",
+      bottom: "15%",
+      left: "70%",
+      delay: "1.4s",
+      rotate: "1deg",
+    },
+  ];
+
+  return (
+    <div className="relative w-full h-96 scale-90 lg:scale-110">
+      {textBoxes.map((box) => (
+        <div
+          key={box.id}
+          className="absolute bg-white/10 backdrop-blur-lg border border-white/30 rounded-xl px-5 py-4 shadow-2xl min-w-[200px] max-w-[280px] animate-float"
+          style={{
+            top: box.top,
+            left: box.left,
+            right: box.right,
+            bottom: box.bottom,
+            transform: `rotate(${box.rotate})`,
+            animationDelay: box.delay,
+          }}
+        >
+          <p className="text-xs text-white/70 mb-1.5 tracking-wide font-sans">
+            Detected Text
+          </p>
+          <p className="text-sm text-white font-medium font-khmer">
+            {box.text}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function FeatureInfo({ icon, title, description, align = "left" }) {
   return (
     <div
-      className={`flex flex-col gap-5 max-w-2xl ${
+      className={`flex flex-col gap-5 w-full lg:w-2xl ${
         align === "left"
           ? "items-center lg:items-start text-center lg:text-left"
           : "items-center lg:items-end text-center lg:text-right"
@@ -181,7 +354,7 @@ function FeatureInfo({ icon, title, description, align = "left" }) {
       </h3>
 
       {/* Description */}
-      <p className="text-white/60 text-base lg:text-lg leading-relaxed font-sans">
+      <p className="text-white/60 text-base lg:text-lg leading-relaxed font-sans w-full">
         {description}
       </p>
     </div>
@@ -199,16 +372,28 @@ export default function FeatureShowcase() {
               feature.imageLeft ? "" : "lg:flex-row-reverse"
             }`}
           >
-            {/* Demo Image */}
-            <DemoImage cursorImg={cursorImg} namasteImg={namasteImg} />
+            {/* Demo Image, Floating Text Boxes, Dataset Collage, or Security Icons */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center">
+              {feature.id === 2 ? (
+                <FloatingTextBoxes />
+              ) : feature.id === 3 ? (
+                <DatasetCollage addClassName="relative w-[90vw] lg:w-[40vw] lg:mr-[-200px] max-w-[835px] h-[500px] sm:h-[600px] md:h-[700px] overflow-hidden rounded-2xl" />
+              ) : feature.id === 4 ? (
+                <SecurityIcons />
+              ) : (
+                <DemoImage cursorImg={cursorImg} namasteImg={namasteImg} />
+              )}
+            </div>
 
             {/* Feature Info */}
-            <FeatureInfo
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              align={feature.imageLeft ? "left" : "right"}
-            />
+            <div className="w-full lg:w-1/2 flex items-center justify-center">
+              <FeatureInfo
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                align={feature.imageLeft ? "left" : "right"}
+              />
+            </div>
           </div>
         ))}
       </div>

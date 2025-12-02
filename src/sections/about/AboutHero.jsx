@@ -1,10 +1,14 @@
+import MediaWrapper from "../../components/ui/MediaWrapper";
+
 export default function AboutHero() {
   return (
     <section className="relative pt-32 pb-16 overflow-hidden">
       {/* Left hand image */}
       <div className="lg:z-10 absolute left-0 top-40 w-[350px] lg:w-[600px] opacity-70 pointer-events-none -translate-x-4">
-        <img
+        <MediaWrapper
           src="/src/assets/images/signs/point-sign.png"
+          fetchPriority="high"
+          eager={true}
           alt=""
           className="w-full h-auto object-contain"
           style={{
@@ -15,8 +19,10 @@ export default function AboutHero() {
 
       {/* Right hand image */}
       <div className="absolute right-0 top-24 w-[350px] lg:w-[600px] opacity-70 pointer-events-none translate-x-4">
-        <img
+        <MediaWrapper
           src="/src/assets/images/signs/peace-sign.png"
+          fetchPriority="high"
+          eager={true}
           alt=""
           className="w-full h-auto object-contain"
           style={{ filter: "grayscale(100%) contrast(1.1) brightness(1.1)" }}
@@ -43,6 +49,8 @@ export default function AboutHero() {
           <div className="relative rounded-lg overflow-hidden shadow-2xl">
             <video
               src="/src/assets/videos/about-cover.mp4"
+              preload="auto"
+              poster="/src/assets/images/about-cover.png"
               autoPlay
               loop
               muted

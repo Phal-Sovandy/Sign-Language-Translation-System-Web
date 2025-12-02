@@ -166,7 +166,7 @@ export default function WorkflowSection() {
         </div>
 
         {/* Workflow Steps */}
-        <div className="flex flex-col lg:flex-row items-center justify-between w-full py-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between w-full py-8 gap-10 lg:gap-0">
           {steps.map((step, index) => (
             <>
               <div key={step.id} className="flex items-center gap-3">

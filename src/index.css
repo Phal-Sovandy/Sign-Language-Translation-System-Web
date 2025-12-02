@@ -22,6 +22,8 @@
   }
 
   body {
+    width: 100vw;
+    overflow-x: hidden;
     margin: 0;
     background-color: #0c0c0c;
     color: #ffffff;
@@ -59,4 +61,18 @@
 
 .animate-spin-slow-reverse {
   animation: spin-slow-reverse 25s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }

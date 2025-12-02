@@ -154,7 +154,7 @@ export default function ChangelogPage() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-background">
+    <div className="min-h-screen bg-brand-background overflow-x-clip">
       <Header showDemoButton={false} customButton={<VisitRepositoryButton />} />
 
       <main className="pt-28 pb-16">

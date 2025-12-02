@@ -1,17 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useMatch } from "react-router-dom";
 import { socialLinks } from "../../config";
 
-const DemoButton = ({ isMobile = false }) => (
-  <Link
-    to="/demo"
-    className={`${
-      isMobile ? "w-full justify-center" : "ml-auto"
-    } inline-flex items-center gap-2 rounded-full border border-white/20 px-4 sm:px-6 md:px-7 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white transition hover:bg-white/5`}
-  >
-    Start a Demo
-  </Link>
-);
+const DemoButton = ({ isMobile = false }) => {
+  const location = useLocation();
+
+  const handleClick = () => {
+    // If clicking on the same page link, scroll to top
+    if (location.pathname === "/demo") {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <Link
+      to="/demo"
+      onClick={handleClick}
+      className={`${
+        isMobile ? "w-full justify-center" : "ml-auto"
+      } inline-flex items-center gap-2 rounded-full border border-white/20 px-4 sm:px-6 md:px-7 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white transition hover:bg-white/5`}
+    >
+      Start a Demo
+    </Link>
+  );
+};
 
 const CommunityButton = ({ isMobile = false }) => (
   <a
@@ -38,14 +54,30 @@ const CommunityButton = ({ isMobile = false }) => (
 );
 
 const NavLink = ({ label, href, isRoute, isMobile = false, onClick }) => {
-  const className = `group relative text-sm sm:text-base font-medium text-white/70 transition hover:text-white ${
-    isMobile ? "py-3 px-4 border-b border-white/5" : ""
-  }`;
+  const location = useLocation();
+  const isActive = isRoute && location.pathname === href;
+
+  const className = `group relative text-sm sm:text-base font-medium transition ${
+    isActive ? "text-white" : "text-white/70 hover:text-white"
+  } ${isMobile ? "py-3 px-4 border-b border-white/5" : ""}`;
+
   const underline = !isMobile ? (
-    <span className="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-white transition-transform duration-300 group-hover:scale-x-100" />
+    <span
+      className={`absolute inset-x-0 -bottom-1 h-px origin-left bg-white transition-transform duration-300 ${
+        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+      }`}
+    />
   ) : null;
 
   const handleClick = () => {
+    // If clicking on the same page link, scroll to top
+    if (isRoute && location.pathname === href) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
     if (onClick) onClick();
   };
 
@@ -78,6 +110,7 @@ export default function Header({
   showDemoButton = true,
   customButton = null,
 }) {
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -135,13 +168,23 @@ export default function Header({
       {/* Logo */}
       <Link
         to="/"
+        onClick={() => {
+          // If clicking on the same page link, scroll to top
+          if (location.pathname === "/") {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }
+        }}
         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.25)] hover:opacity-80 transition-opacity flex-shrink-0"
       >
         KSLTS
       </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-8">
+      <nav className="absolute left-1/2 -translate-x-1/2 hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-8 ">
         {links.map((link) => (
           <NavLink key={link.label} {...link} />
         ))}

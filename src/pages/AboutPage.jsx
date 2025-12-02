@@ -14,7 +14,7 @@ import {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-brand-background">
+    <div className="min-h-screen bg-brand-background overflow-x-clip">
       {/* Header */}
       <Header showDemoButton={false} />
 

@@ -1,4 +1,5 @@
 import handReach from "../../assets/images/misc/hand.png";
+import MediaWrapper from "../../components/ui/MediaWrapper";
 
 const copy =
   "From silent gestures to clear communication, our system transforms sign language into readable, understandable text — powered by AI and vision tech. No learning curve. No delay. Just understanding.";
@@ -16,10 +17,10 @@ export default function StorySection() {
 
         <div className="relative w-full max-w-3xl overflow-visible rounded-[40px]">
           <div className="absolute inset-8 rounded-[32px] bg-[radial-gradient(circle_at_center,rgba(47,107,255,0.3),transparent_70%)] blur-3xl"></div>
-          <img
+          <MediaWrapper
             src={handReach}
             alt="Hand demonstrating sign language"
-            className="relative left-[50px] z-10 mx-auto w-full max-w-2xl object-contain"
+            className="relative md:left-[50px] z-10 mx-auto w-full max-w-2xl object-contain"
           />
         </div>
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import MediaWrapper from "../../components/ui/MediaWrapper";
 
 // Story item component with scroll animation
 function StoryItem({ story }) {
@@ -44,7 +45,7 @@ function StoryItem({ story }) {
         }`}
       >
         <div className="rounded-lg overflow-hidden">
-          <img
+          <MediaWrapper
             src={story.image}
             alt={story.title}
             className="w-full aspect-video object-cover"

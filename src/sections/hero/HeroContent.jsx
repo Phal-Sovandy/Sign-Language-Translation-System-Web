@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { heroCopy } from "../../config";
 
 const Highlight = () => (
@@ -24,22 +24,39 @@ const Description = () => (
   </p>
 );
 
-const PrimaryActions = () => (
-  <div className="flex flex-wrap gap-4">
-    <Link
-      to="/demo"
-      className="rounded-full bg-brand-primary px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-[0_15px_45px_rgba(47,107,255,0.45)] ring-1 ring-[#4d8dff]/40 transition hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(47,107,255,0.7)]"
-    >
-      {heroCopy.primaryCta} →
-    </Link>
-    <Link
-      to="/about"
-      className="rounded-full border border-white/25 px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white/85 transition hover:border-white hover:text-white"
-    >
-      {heroCopy.secondaryCta} →
-    </Link>
-  </div>
-);
+const PrimaryActions = () => {
+  const location = useLocation();
+
+  const handleLinkClick = (path) => {
+    // If clicking on the same page link, scroll to top
+    if (location.pathname === path) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <div className="flex flex-wrap gap-4">
+      <Link
+        to="/demo"
+        onClick={() => handleLinkClick("/demo")}
+        className="rounded-full bg-brand-primary px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-[0_15px_45px_rgba(47,107,255,0.45)] ring-1 ring-[#4d8dff]/40 transition hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(47,107,255,0.7)]"
+      >
+        {heroCopy.primaryCta} →
+      </Link>
+      <Link
+        to="/about"
+        onClick={() => handleLinkClick("/about")}
+        className="rounded-full border border-white/25 px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white/85 transition hover:border-white hover:text-white"
+      >
+        {heroCopy.secondaryCta} →
+      </Link>
+    </div>
+  );
+};
 
 export default function HeroContent() {
   return (

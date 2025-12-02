@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TiltedCard from "../../components/visuals/TitledCard";
+import MediaWrapper from "../../components/ui/MediaWrapper";
 
 const DEMO_URL = "https://sign-language-translation-system-we.vercel.app/demo";
 
@@ -53,7 +54,10 @@ function DemoCard({ copied }) {
         <div className="flex flex-col items-center gap-2">
           <div className="w-28 h-28 bg-white rounded-lg p-2.5 flex items-center justify-center">
             {/* QR Code Pattern */}
-            <img src="../../../src/assets/images/demo-qr.png" />
+            <MediaWrapper
+              src="../../../src/assets/images/demo-qr.png"
+              alt="QR Code for demo"
+            />
           </div>
           <span className="text-2xl text-white/50 font-display tracking-wider">
             Scan for Demo!

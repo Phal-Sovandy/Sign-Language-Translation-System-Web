@@ -1,1 +1,2 @@
-export { default as Tooltip, SimpleTooltip } from "./Tooltip";
+export { default as Tooltip } from "./Tooltip";
+export { default as MediaWrapper } from "./MediaWrapper";

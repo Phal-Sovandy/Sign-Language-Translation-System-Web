@@ -1,4 +1,5 @@
 import appInterfaceImg from "../../assets/images/misc/demo.png";
+import MediaWrapper from "../../components/ui/MediaWrapper";
 
 export default function InterfaceShowcase() {
   return (
@@ -68,7 +69,7 @@ export default function InterfaceShowcase() {
             </div>
 
             {/* Screenshot */}
-            <img
+            <MediaWrapper
               src={appInterfaceImg}
               alt="KSLTS Application Interface"
               className="w-full h-auto"

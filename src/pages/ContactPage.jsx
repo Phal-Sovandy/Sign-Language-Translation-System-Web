@@ -117,58 +117,57 @@ export default function ContactPage() {
 
           {/* Contact Form Card */}
           <div className="max-w-[1500px] mx-auto mb-8 md:mb-12 lg:mb-[90px]">
-            <div className="bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden">
-              {/* Decorative Background Icons */}
-              <div className="absolute inset-0 pointer-events-none hidden lg:block">
-                {/* Paper Airplane Icon - Left */}
-                <div className="absolute -left-20 top-20 opacity-10">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="512"
-                    height="512"
-                    viewBox="0 0 512 512"
-                    className="w-64 h-64 text-white"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M473 39.05a24 24 0 0 0-25.5-5.46L47.47 185h-.08a24 24 0 0 0 1 45.16l.41.13l137.3 58.63a16 16 0 0 0 15.54-3.59L422 80a7.07 7.07 0 0 1 10 10L226.66 310.26a16 16 0 0 0-3.59 15.54l58.65 137.38c.06.2.12.38.19.57c3.2 9.27 11.3 15.81 21.09 16.25h1a24.63 24.63 0 0 0 23-15.46L478.39 64.62A24 24 0 0 0 473 39.05"
-                    />
-                  </svg>
-                </div>
-
-                {/* Phone Icon - Right */}
-                <div className="absolute -right-20 top-32 opacity-10">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className="w-64 h-64 text-white"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"
-                    />
-                  </svg>
-                </div>
-
-                {/* Bottom Center Decorative Shape */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 opacity-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    className="w-96 h-96 text-white"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M21.41 8.64v-.05a10 10 0 0 0-18.78 0s0 0 0 .05a9.86 9.86 0 0 0 0 6.72v.05a10 10 0 0 0 18.78 0s0 0 0-.05a9.86 9.86 0 0 0 0-6.72M4.26 14a7.8 7.8 0 0 1 0-4h1.86a16.7 16.7 0 0 0 0 4Zm.82 2h1.4a12 12 0 0 0 1 2.57A8 8 0 0 1 5.08 16m1.4-8h-1.4a8 8 0 0 1 2.37-2.57A12 12 0 0 0 6.48 8M11 19.7A6.34 6.34 0 0 1 8.57 16H11Zm0-5.7H8.14a14.4 14.4 0 0 1 0-4H11Zm0-6H8.57A6.34 6.34 0 0 1 11 4.3Zm7.92 0h-1.4a12 12 0 0 0-1-2.57A8 8 0 0 1 18.92 8M13 4.3A6.34 6.34 0 0 1 15.43 8H13Zm0 15.4V16h2.43A6.34 6.34 0 0 1 13 19.7m2.86-5.7H13v-4h2.86a14.4 14.4 0 0 1 0 4m.69 4.57a12 12 0 0 0 1-2.57h1.4a8 8 0 0 1-2.4 2.57M19.74 14h-1.86a16 16 0 0 0 .12-2a16 16 0 0 0-.12-2h1.86a7.8 7.8 0 0 1 0 4"
-                    />
-                  </svg>
-                </div>
+            {/* Decorative Background Icons */}
+            <div className="relative inset-0 pointer-events-none hidden lg:block">
+              {/* Paper Airplane Icon - Left */}
+              <div className="absolute -left-40 -top-20 opacity-70">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 512 512"
+                  className="w-64 h-64 text-white"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M473 39.05a24 24 0 0 0-25.5-5.46L47.47 185h-.08a24 24 0 0 0 1 45.16l.41.13l137.3 58.63a16 16 0 0 0 15.54-3.59L422 80a7.07 7.07 0 0 1 10 10L226.66 310.26a16 16 0 0 0-3.59 15.54l58.65 137.38c.06.2.12.38.19.57c3.2 9.27 11.3 15.81 21.09 16.25h1a24.63 24.63 0 0 0 23-15.46L478.39 64.62A24 24 0 0 0 473 39.05"
+                  />
+                </svg>
               </div>
 
+              {/* Phone Icon - Right */}
+              <div className="absolute -right-40 top-32 opacity-40">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="54"
+                  height="54"
+                  viewBox="0 0 24 24"
+                  className="w-64 h-64 text-white"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"
+                  />
+                </svg>
+              </div>
+
+              {/* Bottom Center Decorative Shape */}
+              <div className="absolute top-30 left-1/2 -translate-x-1/2 opacity-40">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="w-96 h-96 text-white"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M21.41 8.64v-.05a10 10 0 0 0-18.78 0s0 0 0 .05a9.86 9.86 0 0 0 0 6.72v.05a10 10 0 0 0 18.78 0s0 0 0-.05a9.86 9.86 0 0 0 0-6.72M4.26 14a7.8 7.8 0 0 1 0-4h1.86a16.7 16.7 0 0 0 0 4Zm.82 2h1.4a12 12 0 0 0 1 2.57A8 8 0 0 1 5.08 16m1.4-8h-1.4a8 8 0 0 1 2.37-2.57A12 12 0 0 0 6.48 8M11 19.7A6.34 6.34 0 0 1 8.57 16H11Zm0-5.7H8.14a14.4 14.4 0 0 1 0-4H11Zm0-6H8.57A6.34 6.34 0 0 1 11 4.3Zm7.92 0h-1.4a12 12 0 0 0-1-2.57A8 8 0 0 1 18.92 8M13 4.3A6.34 6.34 0 0 1 15.43 8H13Zm0 15.4V16h2.43A6.34 6.34 0 0 1 13 19.7m2.86-5.7H13v-4h2.86a14.4 14.4 0 0 1 0 4m.69 4.57a12 12 0 0 0 1-2.57h1.4a8 8 0 0 1-2.4 2.57M19.74 14h-1.86a16 16 0 0 0 .12-2a16 16 0 0 0-.12-2h1.86a7.8 7.8 0 0 1 0 4"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div className="bg-[#0d0d0d]/20 backdrop-blur-lg border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 relative shadow-2xl">
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 relative z-10 px-0 md:px-4 lg:px-8 py-4 md:py-6">
                 {/* Left Side - Text Content */}
                 <div className="w-full md:w-1/2 flex flex-col justify-between pb-10">
