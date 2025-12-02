@@ -1,0 +1,202 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import TiltedCard from "../../components/visuals/TitledCard";
+
+const DEMO_URL = "https://kslts.app/demo";
+
+// Card content component for the TiltedCard overlay
+function DemoCard({ copied }) {
+  return (
+    <div className="w-[580px] h-[380px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl p-10 border border-white/10 flex flex-col justify-between relative cursor-pointer">
+      {/* Copied indicator */}
+      {copied && (
+        <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-green-500/20 border border-green-500/30 text-green-400 text-xs px-3 py-1.5 rounded-full">
+          <svg
+            className="w-3.5 h-3.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          Copied!
+        </div>
+      )}
+
+      {/* Top Section */}
+      <div className="space-y-4">
+        <p className="text-xl text-white/50 font-display tracking-widest uppercase">
+          Khmer Sign Language Translation System
+        </p>
+        <h3 className="text-3xl font-bold text-white font-heading">
+          Try it Now!
+        </h3>
+        <p className="text-base text-white/60 font-sans leading-relaxed">
+          Experience our system converting gestures into readable text and
+          speech—fast, accurate, and effortless.
+        </p>
+      </div>
+
+      {/* Bottom Section - Logo and QR */}
+      <div className="flex items-end justify-between">
+        {/* KSLTS Logo */}
+        <span className="text-6xl font-display text-white tracking-wider">
+          KSLTS
+        </span>
+
+        {/* QR Code Placeholder */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-28 h-28 bg-white rounded-lg p-2.5 flex items-center justify-center">
+            {/* QR Code Pattern */}
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              <rect x="0" y="0" width="30" height="30" fill="#000" />
+              <rect x="5" y="5" width="20" height="20" fill="#fff" />
+              <rect x="10" y="10" width="10" height="10" fill="#000" />
+
+              <rect x="70" y="0" width="30" height="30" fill="#000" />
+              <rect x="75" y="5" width="20" height="20" fill="#fff" />
+              <rect x="80" y="10" width="10" height="10" fill="#000" />
+
+              <rect x="0" y="70" width="30" height="30" fill="#000" />
+              <rect x="5" y="75" width="20" height="20" fill="#fff" />
+              <rect x="10" y="80" width="10" height="10" fill="#000" />
+
+              <rect x="40" y="0" width="10" height="10" fill="#000" />
+              <rect x="50" y="10" width="10" height="10" fill="#000" />
+              <rect x="40" y="20" width="10" height="10" fill="#000" />
+
+              <rect x="0" y="40" width="10" height="10" fill="#000" />
+              <rect x="20" y="40" width="10" height="10" fill="#000" />
+              <rect x="0" y="50" width="10" height="10" fill="#000" />
+
+              <rect x="40" y="40" width="20" height="20" fill="#000" />
+              <rect x="45" y="45" width="10" height="10" fill="#fff" />
+
+              <rect x="70" y="40" width="10" height="10" fill="#000" />
+              <rect x="90" y="40" width="10" height="10" fill="#000" />
+              <rect x="80" y="50" width="10" height="10" fill="#000" />
+
+              <rect x="70" y="70" width="10" height="10" fill="#000" />
+              <rect x="90" y="70" width="10" height="10" fill="#000" />
+              <rect x="80" y="80" width="10" height="10" fill="#000" />
+              <rect x="70" y="90" width="10" height="10" fill="#000" />
+              <rect x="90" y="90" width="10" height="10" fill="#000" />
+
+              <rect x="40" y="70" width="10" height="10" fill="#000" />
+              <rect x="50" y="80" width="10" height="10" fill="#000" />
+              <rect x="40" y="90" width="10" height="10" fill="#000" />
+            </svg>
+          </div>
+          <span className="text-2xl text-white/50 font-display tracking-wider">
+            Scan for Demo!
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function TryDemoSection() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(DEMO_URL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+
+  return (
+    <section className="relative w-screen py-32 bg-brand-background overflow-hidden">
+      {/* Background gradient */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[150px]" />
+      </div>
+
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16 px-8 max-w-[1700px] mx-auto">
+        {/* Left Content */}
+        <div className="flex flex-col gap-6 max-w-lg">
+          {/* Title */}
+          <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-semibold text-white">
+            Try it Now!
+          </h2>
+
+          {/* Description */}
+          <p className="text-white/60 font-sans leading-relaxed">
+            Experience our Khmer Sign Language Translation System in action!
+            Instantly translate gestures and speech into accurate, readable text
+            and see how communication becomes effortless.
+          </p>
+
+          {/* Requirements */}
+          <div className="space-y-3">
+            <p className="text-white font-semibold font-sans">
+              Requirements to try the demo:
+            </p>
+            <ul className="space-y-2 text-white/60 font-sans">
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">•</span>A modern web browser
+                (Chrome, Edge, Firefox, or Safari)
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">•</span>
+                Webcam enabled for gesture capture
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-white/50">•</span>
+                Stable internet connection for real-time processing
+              </li>
+            </ul>
+          </div>
+
+          {/* CTA Button */}
+          <Link
+            to="/demo"
+            className="inline-flex items-center gap-2.5 w-fit px-7 py-3 bg-brand-primary hover:bg-brand-primary/90 rounded-full text-white font-sans text-sm font-semibold transition-colors shadow-[0_15px_45px_rgba(47,107,255,0.45)]"
+          >
+            Start a Demo
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Right Content - TiltedCard */}
+        <div onClick={handleCopyLink}>
+          <TiltedCard
+            imageSrc=""
+            captionText="Click to copy demo link"
+            containerHeight="420px"
+            containerWidth="620px"
+            imageHeight="380px"
+            imageWidth="580px"
+            scaleOnHover={1.05}
+            rotateAmplitude={12}
+            showMobileWarning={false}
+            showTooltip={true}
+            displayOverlayContent={true}
+            overlayContent={<DemoCard copied={copied} />}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
