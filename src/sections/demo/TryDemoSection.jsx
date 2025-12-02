@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import TiltedCard from "../../components/visuals/TitledCard";
 
-const DEMO_URL = "https://sign-language-translation-system-we.vercel.app";
+const DEMO_URL = "https://sign-language-translation-system-we.vercel.app/demo";
 
 // Card content component for the TiltedCard overlay
 function DemoCard({ copied }) {
