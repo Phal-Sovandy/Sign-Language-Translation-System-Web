@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import TiltedCard from "../../components/visuals/TitledCard";
 
-const DEMO_URL = "https://kslts.app/demo";
+const DEMO_URL = "https://sign-language-translation-system-we.vercel.app";
 
 // Card content component for the TiltedCard overlay
 function DemoCard({ copied }) {
@@ -53,44 +53,7 @@ function DemoCard({ copied }) {
         <div className="flex flex-col items-center gap-2">
           <div className="w-28 h-28 bg-white rounded-lg p-2.5 flex items-center justify-center">
             {/* QR Code Pattern */}
-            <svg viewBox="0 0 100 100" className="w-full h-full">
-              <rect x="0" y="0" width="30" height="30" fill="#000" />
-              <rect x="5" y="5" width="20" height="20" fill="#fff" />
-              <rect x="10" y="10" width="10" height="10" fill="#000" />
-
-              <rect x="70" y="0" width="30" height="30" fill="#000" />
-              <rect x="75" y="5" width="20" height="20" fill="#fff" />
-              <rect x="80" y="10" width="10" height="10" fill="#000" />
-
-              <rect x="0" y="70" width="30" height="30" fill="#000" />
-              <rect x="5" y="75" width="20" height="20" fill="#fff" />
-              <rect x="10" y="80" width="10" height="10" fill="#000" />
-
-              <rect x="40" y="0" width="10" height="10" fill="#000" />
-              <rect x="50" y="10" width="10" height="10" fill="#000" />
-              <rect x="40" y="20" width="10" height="10" fill="#000" />
-
-              <rect x="0" y="40" width="10" height="10" fill="#000" />
-              <rect x="20" y="40" width="10" height="10" fill="#000" />
-              <rect x="0" y="50" width="10" height="10" fill="#000" />
-
-              <rect x="40" y="40" width="20" height="20" fill="#000" />
-              <rect x="45" y="45" width="10" height="10" fill="#fff" />
-
-              <rect x="70" y="40" width="10" height="10" fill="#000" />
-              <rect x="90" y="40" width="10" height="10" fill="#000" />
-              <rect x="80" y="50" width="10" height="10" fill="#000" />
-
-              <rect x="70" y="70" width="10" height="10" fill="#000" />
-              <rect x="90" y="70" width="10" height="10" fill="#000" />
-              <rect x="80" y="80" width="10" height="10" fill="#000" />
-              <rect x="70" y="90" width="10" height="10" fill="#000" />
-              <rect x="90" y="90" width="10" height="10" fill="#000" />
-
-              <rect x="40" y="70" width="10" height="10" fill="#000" />
-              <rect x="50" y="80" width="10" height="10" fill="#000" />
-              <rect x="40" y="90" width="10" height="10" fill="#000" />
-            </svg>
+            <img src="../../../src/assets/images/web-qr.png" />
           </div>
           <span className="text-2xl text-white/50 font-display tracking-wider">
             Scan for Demo!
