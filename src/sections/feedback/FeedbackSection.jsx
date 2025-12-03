@@ -329,7 +329,7 @@ const khmerWordsRow1 = [
   { node: <Pill>ស្រឡាញ់</Pill> },
   { node: <Pill>ជម្រាបសួរ</Pill> },
   { node: <Pill>អរគុណ</Pill> },
-  { node: <Pill>សូមទោស</Pill> },
+  { node: <Pill>សុំទោស</Pill> },
   { node: <Pill>ម្សិលមិញ</Pill> },
   { node: <Pill>ដឹង</Pill> },
   { node: <Pill>ដែក</Pill> },
@@ -348,6 +348,10 @@ const khmerWordsRow2 = [
   { node: <Pill>មិនយល់ព្រម</Pill> },
   { node: <Pill>ខ្ញុំស្រឡាញ់អ្នក</Pill> },
   { node: <Pill>មេត្តា</Pill> },
+  { node: <Pill>ស្រួល</Pill> },
+  { node: <Pill>តិច</Pill> },
+  { node: <Pill>ឆ្ងាញ់ណាស់</Pill> },
+  { node: <Pill>ហេវណាស់</Pill> },
 ];
 
 function Pill({ children }) {

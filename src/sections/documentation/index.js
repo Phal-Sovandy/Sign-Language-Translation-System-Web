@@ -1,0 +1,9 @@
+export { ProjectOverview } from "./ProjectOverview";
+export { Objectives } from "./Objectives";
+export { SystemRequirements } from "./SystemRequirements";
+export { HowItWorks } from "./HowItWorks";
+export { DatasetTraining } from "./DatasetTraining";
+export { Demo } from "./Demo";
+export { Limitations } from "./Limitations";
+export { FutureWork } from "./FutureWork";
+export { Community } from "./Community";

@@ -143,9 +143,8 @@ export default function MotionSection() {
           sticky
           trackScroll
           lockScroll={false}
-          className="block sticky top-0 w-full h-screen overflow-hidden"
+          className="block sticky top-0 w-full h-screen overflow-hidden -z-10"
         />
-
         <div
           ref={overlayRef}
           className="overflow-clip pointer-events-none sticky top-0 flex h-screen w-full flex-col items-center justify-center md:justify-between gap-8 px-6 pb-10 pt-16 text-center text-white"

@@ -15,7 +15,7 @@ const FeatureInfo = React.memo(
         }`}
       >
         {/* Icon */}
-        <div className="text-brand-primary">{icon}</div>
+        <div className="text-white">{icon}</div>
 
         {/* Title */}
         <h3 className="font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-semibold text-white">

@@ -9,9 +9,7 @@ const Highlight = () => (
 );
 
 const Title = () => (
-  <h1
-    className="font-heading font-normal leading-[1.1] sm:leading-tight text-white text-[clamp(1.75rem,9vw,7.5rem)] lg:text-[clamp(1.75rem,6vw,7.5rem)]"
-  >
+  <h1 className="font-heading font-normal leading-[1.1] sm:leading-tight text-white text-[clamp(1.75rem,9vw,7.5rem)] lg:text-[clamp(1.75rem,6vw,7.5rem)]">
     <span className="block whitespace-nowrap font-bold bg-linear-to-r from-[#0077FF] to-[#FF2D2D] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(0,119,255,0.55)]">
       {heroCopy.highlight}
     </span>
@@ -49,9 +47,22 @@ const PrimaryActions = () => {
       <Link
         to="/demo"
         onClick={() => handleLinkClick("/demo")}
-        className="rounded-full bg-brand-primary px-5 py-2.5 sm:px-6 sm:py-2.5 md:px-7 md:py-3 text-xs sm:text-sm font-semibold uppercase tracking-wide text-white shadow-[0_15px_45px_rgba(47,107,255,0.45)] ring-1 ring-[#4d8dff]/40 transition hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(47,107,255,0.7)]"
+        className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-5 py-2.5 sm:px-6 sm:py-2.5 md:px-7 md:py-3 text-xs sm:text-sm font-semibold uppercase tracking-wide text-white shadow-[0_15px_45px_rgba(47,107,255,0.45)] ring-1 ring-[#4d8dff]/40 transition hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(47,107,255,0.7)]"
       >
-        {heroCopy.primaryCta} →
+        {heroCopy.primaryCta}
+        <svg
+          className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+          />
+        </svg>
       </Link>
       <Link
         to="/about"

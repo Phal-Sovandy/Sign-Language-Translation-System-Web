@@ -1,5 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import MediaWrapper from "../../components/ui/MediaWrapper";
+import story1 from "../../assets/images/story/story-1.webp";
+import story2 from "../../assets/images/story/story-2.webp";
+import story3 from "../../assets/images/story/story-3.webp";
+import story4 from "../../assets/images/story/story-4.webp";
+import story5 from "../../assets/images/story/story-5.webp";
+import story6 from "../../assets/images/story/story-6.webp";
+
 
 // Story item component with scroll animation
 function StoryItem({ story }) {
@@ -84,42 +91,42 @@ const stories = [
     title: "The Problem",
     description:
       "Communication should never be a barrier — yet for many people in the Deaf and speech-impaired community, daily conversations can feel isolating, limited, and exhausting. We saw firsthand how a lack of accessible communication tools creates unfair gaps in education, work, and social life.",
-    image: "/src/assets/images/story/story-1.webp",
+    image: story1,
     imagePosition: "left",
   },
   {
     title: "The Spark",
     description:
       "Our journey began with a simple question: What if technology could listen with its eyes? We believed that with the right tools, gesture and expression could become just as powerful as spoken words.",
-    image: "/src/assets/images/story/story-2.webp",
+    image: story2,
     imagePosition: "right",
   },
   {
     title: "The Solution",
     description:
       "That belief led us to build a Khmer sign language translation system that converts gestures into readable text and speech — making communication faster, clearer, and more human.",
-    image: "/src/assets/images/story/story-3.webp",
+    image: story3,
     imagePosition: "left",
   },
   {
     title: "The People",
     description:
       "We build for students trying to learn, workers trying to connect, families trying to understand, and a community that deserves to be heard — without boundaries.",
-    image: "/src/assets/images/story/story-4.webp",
+    image: story4,
     imagePosition: "right",
   },
   {
     title: "The Growth",
     description:
       "What began as a small idea has grown into a meaningful project driven by learning, testing, and listening to real users.",
-    image: "/src/assets/images/story/story-5.webp",
+    image: story5,
     imagePosition: "left",
   },
   {
     title: "The Vision",
     description:
       "Our goal is simple: a future where language never divides — and technology brings people closer instead of further apart.",
-    image: "/src/assets/images/story/story-6.webp",
+    image: story6,
     imagePosition: "right",
   },
 ];

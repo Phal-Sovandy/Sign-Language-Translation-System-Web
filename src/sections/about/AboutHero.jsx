@@ -1,4 +1,8 @@
 import MediaWrapper from "../../components/ui/MediaWrapper";
+import pointingHand from "../../assets/images/signs/point-sign.webp";
+import peaceSign from "../../assets/images/signs/peace-sign.webp";
+import aboutCover from "/src/assets/images/about-cover.webp";
+import aboutCoverVid from "/src/assets/videos/about-cover.mp4";
 
 export default function AboutHero() {
   return (
@@ -6,7 +10,7 @@ export default function AboutHero() {
       {/* Left hand image */}
       <div className="lg:z-10 absolute left-0 top-40 w-[350px] lg:w-[600px] opacity-70 pointer-events-none -translate-x-4">
         <MediaWrapper
-          src="/src/assets/images/signs/point-sign.webp"
+          src={pointingHand}
           fetchPriority="high"
           eager={true}
           alt=""
@@ -20,7 +24,7 @@ export default function AboutHero() {
       {/* Right hand image */}
       <div className="absolute right-0 top-24 w-[350px] lg:w-[600px] opacity-70 pointer-events-none translate-x-4">
         <MediaWrapper
-          src="/src/assets/images/signs/peace-sign.webp"
+          src={peaceSign}
           fetchPriority="high"
           eager={true}
           alt=""
@@ -48,9 +52,9 @@ export default function AboutHero() {
         <div className="max-w-[1300px] mx-auto">
           <div className="relative rounded-lg overflow-hidden shadow-2xl">
             <video
-              src="/src/assets/videos/about-cover.mp4"
+              src={aboutCoverVid}
               preload="auto"
-              poster="/src/assets/images/about-cover.webp"
+              poster={aboutCover}
               autoPlay
               loop
               muted

@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import TiltedCard from "../../components/visuals/TitledCard";
 import MediaWrapper from "../../components/ui/MediaWrapper";
+import demoQr from "../../assets/images/demo-qr.webp";
 
-const DEMO_URL = "https://sign-language-translation-system-we.vercel.app/demo";
+const DEMO_URL = "https://khmer-sign-language-translation-sys.vercel.app/demo";
 
 // Card content component for the TiltedCard overlay
 function DemoCard({ copied }) {
   return (
-    <div className="w-full max-w-[580px] h-[280px] sm:h-[320px] md:h-[380px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl p-6 sm:p-8 md:p-10 border border-white/10 flex flex-col justify-between relative cursor-pointer">
+    <div className="w-full h-[280px] sm:h-[320px] md:h-[380px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl p-6 sm:p-8 md:p-10 border border-white/10 flex flex-col justify-between relative cursor-pointer">
       {/* Copied indicator */}
       {copied && (
         <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-green-500/20 border border-green-500/30 text-green-400 text-xs px-3 py-1.5 rounded-full">
@@ -54,10 +55,7 @@ function DemoCard({ copied }) {
         <div className="flex flex-col items-center gap-1 sm:gap-2">
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 bg-white rounded-lg p-1.5 sm:p-2 md:p-2.5 flex items-center justify-center">
             {/* QR Code Pattern */}
-            <MediaWrapper
-              src="../../../src/assets/images/demo-qr.webp"
-              alt="QR Code for demo"
-            />
+            <MediaWrapper src={demoQr} alt="QR Code for demo" />
           </div>
           <span className="text-xs sm:text-sm md:text-2xl text-white/50 font-display tracking-wider">
             Scan for Demo!
@@ -140,7 +138,7 @@ export default function TryDemoSection() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
               />
             </svg>
           </Link>
@@ -149,7 +147,7 @@ export default function TryDemoSection() {
         {/* Right Content - TiltedCard */}
         <div
           onClick={handleCopyLink}
-          className="w-full max-w-[580px] sm:max-w-[600px] md:max-w-[620px] lg:max-w-none mx-auto lg:mx-0"
+          className="w-full lg:flex-1 lg:max-w-[900px] xl:max-w-[1000px] mx-auto lg:mx-0"
         >
           <div className="w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[420px]">
             <TiltedCard

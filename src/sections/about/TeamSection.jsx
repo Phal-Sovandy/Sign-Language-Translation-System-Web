@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { team } from "../../config/team";
+import MediaWrapper from "../../components/ui/MediaWrapper";
+import vannVat from "../../assets/images/team/vann-vat.webp";
+import chimPanhaprasith from "../../assets/images/team/chim-panhaprasith.webp";
+import chhiHangcheav from "../../assets/images/team/chhi-hangcheav.webp";
+import toekHengsreng from "../../assets/images/team/toek-hengsreng.webp";
+import monyMeakputhsoktheara from "../../assets/images/team/mony-meakputhsoktheara.webp";
+import phalSovandy from "../../assets/images/team/phal-sovandy.webp";
 
 // Bio Modal Component
 function BioModal({ isOpen, onClose, member }) {
@@ -172,8 +179,6 @@ function BioModal({ isOpen, onClose, member }) {
   );
 }
 
-
-
 export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState(null);
 
@@ -193,43 +198,64 @@ export default function TeamSection() {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 max-w-[1000px] mx-auto">
-          {team.map((member, index) => (
-            <div key={index} className="flex flex-col">
-              {/* Image placeholder */}
-              <div className="w-full aspect-square mb-4 rounded-2xl bg-gradient-to-br from-gray-700 to-gray-800 overflow-hidden">
-                <div className="w-full h-full bg-gray-600/50 flex items-center justify-center">
-                  <span className="text-6xl font-heading font-bold text-white/20">
-                    {member.name.charAt(0)}
-                  </span>
-                </div>
-              </div>
+          {team.map((member, index) => {
+            // Map team member names to their images
+            const teamImages = {
+              "Vann Vat": vannVat,
+              "Chim Panhaprasith": chimPanhaprasith,
+              "Chhi Hangcheav": chhiHangcheav,
+              "Toek Hengsreng": toekHengsreng,
+              "Mony Meakputsoktheara": monyMeakputhsoktheara,
+              "Phal Sovandy": phalSovandy,
+            };
+            const memberImage = teamImages[member.name];
 
-              {/* Info */}
-              <h3 className="font-sans text-lg font-semibold text-white mb-1">
-                {member.name}
-              </h3>
-              <p className="text-white/50 font-sans mb-3">{member.role}</p>
-              <button
-                onClick={() => setSelectedMember(member)}
-                className="inline-flex items-center gap-1 text-white/70 font-sans text-sm hover:text-white transition-colors w-fit"
-              >
-                Read full Bio
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
+            return (
+              <div key={index} className="flex flex-col">
+                {/* Team Member Image */}
+                <div className="w-full aspect-square mb-4 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800">
+                  {memberImage ? (
+                    <MediaWrapper
+                      src={memberImage}
+                      alt={`${member.name} - ${member.role}`}
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-600/50 flex items-center justify-center">
+                      <span className="text-6xl font-heading font-bold text-white/20">
+                        {member.name.charAt(0)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Info */}
+                <h3 className="font-sans text-lg font-semibold text-white mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-white/50 font-sans mb-3">{member.role}</p>
+                <button
+                  onClick={() => setSelectedMember(member)}
+                  className="inline-flex items-center gap-1 text-white/70 font-sans text-sm hover:text-white transition-colors w-fit"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </button>
-            </div>
-          ))}
+                  Read full Bio
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
 
