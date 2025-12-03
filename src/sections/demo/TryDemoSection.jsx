@@ -8,7 +8,7 @@ const DEMO_URL = "https://sign-language-translation-system-we.vercel.app/demo";
 // Card content component for the TiltedCard overlay
 function DemoCard({ copied }) {
   return (
-    <div className="w-[580px] h-[380px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl p-10 border border-white/10 flex flex-col justify-between relative cursor-pointer">
+    <div className="w-full max-w-[580px] h-[280px] sm:h-[320px] md:h-[380px] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl p-6 sm:p-8 md:p-10 border border-white/10 flex flex-col justify-between relative cursor-pointer">
       {/* Copied indicator */}
       {copied && (
         <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-green-500/20 border border-green-500/30 text-green-400 text-xs px-3 py-1.5 rounded-full">
@@ -30,14 +30,14 @@ function DemoCard({ copied }) {
       )}
 
       {/* Top Section */}
-      <div className="space-y-4">
-        <p className="text-xl text-white/50 font-display tracking-widest uppercase">
+      <div className="space-y-2 sm:space-y-3 md:space-y-4">
+        <p className="text-xs sm:text-sm md:text-xl text-white/50 font-display tracking-widest uppercase">
           Khmer Sign Language Translation System
         </p>
-        <h3 className="text-3xl font-bold text-white font-heading">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-heading">
           Try it Now!
         </h3>
-        <p className="text-base text-white/60 font-sans leading-relaxed">
+        <p className="text-xs sm:text-sm md:text-base text-white/60 font-sans leading-relaxed">
           Experience our system converting gestures into readable text and
           speech—fast, accurate, and effortless.
         </p>
@@ -46,20 +46,20 @@ function DemoCard({ copied }) {
       {/* Bottom Section - Logo and QR */}
       <div className="flex items-end justify-between">
         {/* KSLTS Logo */}
-        <span className="text-6xl font-display text-white tracking-wider">
+        <span className="text-3xl sm:text-4xl md:text-6xl font-display text-white tracking-wider">
           KSLTS
         </span>
 
         {/* QR Code Placeholder */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-28 h-28 bg-white rounded-lg p-2.5 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-1 sm:gap-2">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 bg-white rounded-lg p-1.5 sm:p-2 md:p-2.5 flex items-center justify-center">
             {/* QR Code Pattern */}
             <MediaWrapper
               src="../../../src/assets/images/demo-qr.webp"
               alt="QR Code for demo"
             />
           </div>
-          <span className="text-2xl text-white/50 font-display tracking-wider">
+          <span className="text-xs sm:text-sm md:text-2xl text-white/50 font-display tracking-wider">
             Scan for Demo!
           </span>
         </div>
@@ -147,21 +147,26 @@ export default function TryDemoSection() {
         </div>
 
         {/* Right Content - TiltedCard */}
-        <div onClick={handleCopyLink}>
-          <TiltedCard
-            imageSrc=""
-            captionText="Click to copy demo link"
-            containerHeight="420px"
-            containerWidth="620px"
-            imageHeight="380px"
-            imageWidth="580px"
-            scaleOnHover={1.05}
-            rotateAmplitude={12}
-            showMobileWarning={false}
-            showTooltip={true}
-            displayOverlayContent={true}
-            overlayContent={<DemoCard copied={copied} />}
-          />
+        <div
+          onClick={handleCopyLink}
+          className="w-full max-w-[580px] sm:max-w-[600px] md:max-w-[620px] lg:max-w-none mx-auto lg:mx-0"
+        >
+          <div className="w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[420px]">
+            <TiltedCard
+              imageSrc=""
+              captionText="Click to copy demo link"
+              containerHeight="100%"
+              containerWidth="100%"
+              imageHeight="100%"
+              imageWidth="100%"
+              scaleOnHover={1.05}
+              rotateAmplitude={12}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={<DemoCard copied={copied} />}
+            />
+          </div>
         </div>
       </div>
     </section>

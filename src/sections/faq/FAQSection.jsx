@@ -90,7 +90,7 @@ export default function FAQSection() {
           <p className="text-white/60 font-sans leading-relaxed">
             Don't see the answer you're looking for?{" "}
             <a
-              href="#contact"
+              href="/contact"
               className="text-white underline underline-offset-2 hover:text-white/80 transition-colors"
             >
               Get in touch

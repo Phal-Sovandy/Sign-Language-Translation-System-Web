@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollyVideo from "scrolly-video/dist/ScrollyVideo.esm.jsx";
 import breakingWall from "../../assets/videos/breaking_wall.mp4";
+import wallBreakPoster from "../../assets/images/wall_break.webp";
 import manSign from "../../assets/images/signs/man_sign.webp";
 import MediaWrapper from "../../components/ui/MediaWrapper";
 
@@ -131,9 +132,10 @@ export default function MotionSection() {
 
   return (
     <section className="relative w-full">
-      <div ref={wrapperRef} className="h-[350vh] mb-30 md:mb-0">
+      <div ref={wrapperRef} className="h-[350vh] mb-0">
         <ScrollyVideo
           src={breakingWall}
+          poster={wallBreakPoster}
           transitionSpeed={8}
           frameThreshold={0.1}
           cover
@@ -146,7 +148,7 @@ export default function MotionSection() {
 
         <div
           ref={overlayRef}
-          className="pointer-events-none sticky top-0 flex h-screen w-full flex-col items-center justify-center md:justify-between gap-8 px-6 pb-10 pt-16 text-center text-white"
+          className="overflow-clip pointer-events-none sticky top-0 flex h-screen w-full flex-col items-center justify-center md:justify-between gap-8 px-6 pb-10 pt-16 text-center text-white"
         >
           <div className="flex flex-col items-center gap-4">
             <h2
@@ -194,42 +196,42 @@ export default function MotionSection() {
             <MediaWrapper
               src={manSign}
               alt="Man demonstrating sign"
-              className="w-full max-w-3xl drop-shadow-[0_35px_65px_rgba(0,0,0,0.75)]"
+              className="w-[95%] md:w-full max-w-3xl drop-shadow-[0_35px_65px_rgba(0,0,0,0.75)] mx-auto mt-20 md:mt-0"
             />
             {/* Floating feature labels */}
             <span
               data-floating-label
-              className="md:absolute left-[10%] top-[5%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="absolute left-[10%] top-[5%] text-lg lg:text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Real-Time Translation ]
             </span>
             <span
               data-floating-label
-              className="md:absolute right-[20%] top-[15%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="absolute right-[10%] lg:right-[20%] top-[15%] text-lg lg:text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ User Friendly ]
             </span>
             <span
               data-floating-label
-              className="md:absolute left-[5%] top-[40%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="absolute left-[-5%] lg:left-[5%] top-[40%] text-lg lg:text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Performance Optimized ]
             </span>
             <span
               data-floating-label
-              className="md:absolute right-[8%] top-[45%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="absolute right-[-5%] lg:right-[8%] top-[50%] lg:top-[45%] text-lg lg:text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Secure Processing ]
             </span>
             <span
               data-floating-label
-              className="md:absolute left-[10%] top-[76%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="absolute lg:left-[10%] top-[76%] text-lg lg:text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Accessible Design ]
             </span>
             <span
               data-floating-label
-              className="md:absolute right-[12%] top-[80%] text-4xl font-bold text-white/90 tracking-wide opacity-0"
+              className="absolute right-[12%] top-[90%] lg:top-[80%] text-lg lg:text-4xl font-bold text-white/90 tracking-wide opacity-0"
             >
               [ Multi-Gesture Support ]
             </span>

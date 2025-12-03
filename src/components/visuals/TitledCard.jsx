@@ -1,26 +1,26 @@
-import { useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
+import { useRef, useState } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 const springValues = {
   damping: 30,
   stiffness: 100,
-  mass: 2
+  mass: 2,
 };
 
 export default function TiltedCard({
   imageSrc,
-  altText = 'Tilted card image',
-  captionText = '',
-  containerHeight = '300px',
-  containerWidth = '100%',
-  imageHeight = '300px',
-  imageWidth = '300px',
+  altText = "Tilted card image",
+  captionText = "",
+  containerHeight = "300px",
+  containerWidth = "100%",
+  imageHeight = "300px",
+  imageWidth = "300px",
   scaleOnHover = 1.1,
   rotateAmplitude = 14,
   showMobileWarning = true,
   showTooltip = true,
   overlayContent = null,
-  displayOverlayContent = false
+  displayOverlayContent = false,
 }) {
   const ref = useRef(null);
   const x = useMotionValue(0);
@@ -32,7 +32,7 @@ export default function TiltedCard({
   const rotateFigcaption = useSpring(0, {
     stiffness: 350,
     damping: 30,
-    mass: 1
+    mass: 1,
   });
 
   const [lastY, setLastY] = useState(0);
@@ -76,8 +76,14 @@ export default function TiltedCard({
       ref={ref}
       className="relative w-full h-full [perspective:800px] flex flex-col items-center justify-center"
       style={{
-        height: containerHeight,
-        width: containerWidth
+        height:
+          typeof containerHeight === "string" && containerHeight.includes("%")
+            ? containerHeight
+            : containerHeight,
+        width:
+          typeof containerWidth === "string" && containerWidth.includes("%")
+            ? containerWidth
+            : containerWidth,
       }}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
@@ -90,22 +96,34 @@ export default function TiltedCard({
       )}
 
       <motion.div
-        className="relative [transform-style:preserve-3d]"
+        className="relative [transform-style:preserve-3d] w-full h-full"
         style={{
-          width: imageWidth,
-          height: imageHeight,
+          width:
+            typeof imageWidth === "string" && imageWidth.includes("%")
+              ? imageWidth
+              : imageWidth,
+          height:
+            typeof imageHeight === "string" && imageHeight.includes("%")
+              ? imageHeight
+              : imageHeight,
           rotateX,
           rotateY,
-          scale
+          scale,
         }}
       >
         <motion.img
           src={imageSrc}
           alt={altText}
-          className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+          className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)] w-full h-full"
           style={{
-            width: imageWidth,
-            height: imageHeight
+            width:
+              typeof imageWidth === "string" && imageWidth.includes("%")
+                ? imageWidth
+                : imageWidth,
+            height:
+              typeof imageHeight === "string" && imageHeight.includes("%")
+                ? imageHeight
+                : imageHeight,
           }}
         />
 
@@ -123,7 +141,7 @@ export default function TiltedCard({
             x,
             y,
             opacity,
-            rotate: rotateFigcaption
+            rotate: rotateFigcaption,
           }}
         >
           {captionText}
